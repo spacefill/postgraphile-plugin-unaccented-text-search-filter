@@ -1,0 +1,55 @@
+{
+  "name": "postgraphile-plugin-unaccented-text-search-filter",
+  "version": "0.0.1",
+  "description": "Unaccuated search filtering on PostGraphile connections",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write src/**/*.ts",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "prepack": "rm -Rf dist && npm run build",
+    "test": "jest -i",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spacefill/postgraphile-plugin-unaccented-text-search-filter.git"
+  },
+  "author": "madtibo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/graphile-contrib/postgraphile-plugin-unaccented-text-search-filter/issues"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/jest": "26.0.22",
+    "@typescript-eslint/eslint-plugin": "4.20.0",
+    "@typescript-eslint/parser": "4.20.0",
+    "eslint": "7.22.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-jest": "24.3.3",
+    "graphql": "14.7.0",
+    "jest": "26.6.3",
+    "pg": "8.5.1",
+    "postgraphile-core": "4.5.0",
+    "postgraphile-plugin-connection-filter": "2.2.2",
+    "prettier": "2.2.1",
+    "ts-jest": "26.5.4",
+    "typescript": "4.2.3"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/spacefill/postgraphile-plugin-unaccented-text-search-filter#readme",
+  "directories": {
+    "doc": "docs"
+  },
+  "keywords": [
+    "postgraphile",
+    "plugin",
+    "postgresql",
+    "unaccent"
+  ]
+}
