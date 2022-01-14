@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`types.char4.graphql 1`] = `
+Object {
+  "data": Object {
+    "includesUnaccentInsensitive": Object {
+      "nodes": Array [
+        Object {
+          "id": 1,
+        },
+        Object {
+          "id": 2,
+        },
+        Object {
+          "id": 3,
+        },
+        Object {
+          "id": 4,
+        },
+      ],
+    },
+    "likeUnaccentInsensitive": Object {
+      "nodes": Array [
+        Object {
+          "id": 1,
+        },
+        Object {
+          "id": 2,
+        },
+        Object {
+          "id": 3,
+        },
+        Object {
+          "id": 4,
+        },
+      ],
+    },
+    "matchUnaccentInsensitive": Object {
+      "nodes": Array [
+        Object {
+          "id": 1,
+        },
+        Object {
+          "id": 2,
+        },
+        Object {
+          "id": 3,
+        },
+        Object {
+          "id": 4,
+        },
+      ],
+    },
+    "notIncludesUnaccentInsensitive": Object {
+      "nodes": Array [],
+    },
+    "notLikeUnaccentInsensitive": Object {
+      "nodes": Array [],
+    },
+    "notMatchUnaccentInsensitive": Object {
+      "nodes": Array [],
+    },
+  },
+}
+`;
+
+exports[`types.text.graphql 1`] = `
+Object {
+  "data": Object {
+    "includesUnaccentInsensitive": Object {
+      "nodes": Array [
+        Object {
+          "id": 1,
+        },
+        Object {
+          "id": 2,
+        },
+        Object {
+          "id": 3,
+        },
+        Object {
+          "id": 4,
+        },
+      ],
+    },
+    "likeUnaccentInsensitive": Object {
+      "nodes": Array [
+        Object {
+          "id": 1,
+        },
+        Object {
+          "id": 2,
+        },
+        Object {
+          "id": 3,
+        },
+        Object {
+          "id": 4,
+        },
+      ],
+    },
+    "matchUnaccentInsensitive": Object {
+      "nodes": Array [
+        Object {
+          "id": 1,
+        },
+        Object {
+          "id": 2,
+        },
+        Object {
+          "id": 3,
+        },
+        Object {
+          "id": 4,
+        },
+      ],
+    },
+    "notIncludesUnaccentInsensitive": Object {
+      "nodes": Array [],
+    },
+    "notLikeUnaccentInsensitive": Object {
+      "nodes": Array [],
+    },
+    "notMatchUnaccentInsensitive": Object {
+      "nodes": Array [],
+    },
+  },
+}
+`;
+
+exports[`types.varchar64.graphql 1`] = `
+Object {
+  "data": Object {
+    "includesUnaccentInsensitive": Object {
+      "nodes": Array [],
+    },
+    "likeUnaccentInsensitive": Object {
+      "nodes": Array [],
+    },
+    "matchUnaccentInsensitive": Object {
+      "nodes": Array [],
+    },
+    "notIncludesUnaccentInsensitive": Object {
+      "nodes": Array [],
+    },
+    "notLikeUnaccentInsensitive": Object {
+      "nodes": Array [],
+    },
+    "notMatchUnaccentInsensitive": Object {
+      "nodes": Array [],
+    },
+  },
+}
+`;

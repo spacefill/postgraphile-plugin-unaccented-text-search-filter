@@ -1,0 +1,38 @@
+query varchar64 {
+  includesUnaccentInsensitive: allFilterables(
+    filter: { varchar64: { includesUnaccentInsensitive: "É" } }
+  ) {
+    ...nodes
+  }
+  likeUnaccentInsensitive: allFilterables(
+    filter: { varchar64: { likeUnaccentInsensitive: "_ê%" } }
+  ) {
+    ...nodes
+  }
+  matchUnaccentInsensitive: allFilterables(
+    filter: { varchar64: { matchUnaccentInsensitive: "^të.{2}$" } }
+  ) {
+    ...nodes
+  }
+  notIncludesUnaccentInsensitive: allFilterables(
+    filter: { varchar64: { notIncludesUnaccentInsensitive: "É" } }
+  ) {
+    ...nodes
+  }
+  notLikeUnaccentInsensitive: allFilterables(
+    filter: { varchar64: { notLikeUnaccentInsensitive: "%ÊS%" } }
+  ) {
+    ...nodes
+  }
+  notMatchUnaccentInsensitive: allFilterables(
+    filter: { varchar64: { notMatchUnaccentInsensitive: "^të.{2}$" } }
+  ) {
+    ...nodes
+  }
+}
+
+fragment nodes on FilterablesConnection {
+  nodes {
+    id
+  }
+}

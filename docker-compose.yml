@@ -1,0 +1,9 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:14-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: graphile_test
+      POSTGRES_HOST_AUTH_METHOD: trust

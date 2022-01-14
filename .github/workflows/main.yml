@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    container: node:14-alpine
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+      - name: Install dependencies and lint javascript
+        run: |
+          yarn install --frozen-lockfile
+          yarn lint
+
+  test:
+    needs: [lint]
+    runs-on: ubuntu-latest
+    container: node:14-alpine
+    services:
+      postgres:
+        image: postgres:14-alpine
+        env:
+          POSTGRES_DB: graphile_test
+          POSTGRES_HOST_AUTH_METHOD: trust
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+      - name: Install dependencies and test backend
+        run: |
+          yarn install --frozen-lockfile
+          TEST_DATABASE_URL=postgres://postgres@postgres:5432/graphile_test yarn test
+
+  tagged-release:
+    name: "Tagged Release"
+    needs: [test]
+    if: ${{ github.repository == 'spacefill/postgraphile-plugin-unaccented-search-filter' && contains(github.ref, 'refs/tags/v') }}
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+
+      - name: Generate version variable
+        id: branch_name
+        run: echo ::set-output name=TAG_VERSION::${GITHUB_REF#refs/tags/v}
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.16.0'
+          registry-url: 'https://registry.npmjs.org'
+      - run: scripts/deploy-to-npm.sh
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.SPACEFILL_NPM_TOKEN }}
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false

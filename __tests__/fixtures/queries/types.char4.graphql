@@ -1,0 +1,38 @@
+query char4 {
+  includesUnaccentInsensitive: allFilterables(
+    filter: { char4: { includesUnaccentInsensitive: "É" } }
+  ) {
+    ...nodes
+  }
+  likeUnaccentInsensitive: allFilterables(
+    filter: { char4: { likeUnaccentInsensitive: "_ê%" } }
+  ) {
+    ...nodes
+  }
+  matchUnaccentInsensitive: allFilterables(
+    filter: { char4: { matchUnaccentInsensitive: "^të.{2}$" } }
+  ) {
+    ...nodes
+  }
+  notIncludesUnaccentInsensitive: allFilterables(
+    filter: { char4: { notIncludesUnaccentInsensitive: "É" } }
+  ) {
+    ...nodes
+  }
+  notLikeUnaccentInsensitive: allFilterables(
+    filter: { char4: { notLikeUnaccentInsensitive: "%ÊS%" } }
+  ) {
+    ...nodes
+  }
+  notMatchUnaccentInsensitive: allFilterables(
+    filter: { char4: { notMatchUnaccentInsensitive: "^të.{2}$" } }
+  ) {
+    ...nodes
+  }
+}
+
+fragment nodes on FilterablesConnection {
+  nodes {
+    id
+  }
+}
