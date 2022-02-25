@@ -1,31 +1,31 @@
-query text {
+query bpchar4 {
   includesUnaccentInsensitive: allFilterables(
-    filter: { text: { includesUnaccentInsensitive: "É" } }
+    filter: { bpchar4: { includesUnaccentInsensitive: "É" } }
   ) {
     ...nodes
   }
   likeUnaccentInsensitive: allFilterables(
-    filter: { text: { likeUnaccentInsensitive: "_êï%" } }
+    filter: { bpchar4: { likeUnaccentInsensitive: "_ê%" } }
   ) {
     ...nodes
   }
   matchUnaccentInsensitive: allFilterables(
-    filter: { text: { matchUnaccentInsensitive: "^të.{2}$" } }
+    filter: { bpchar4: { matchUnaccentInsensitive: "^të.{2}$" } }
   ) {
     ...nodes
   }
   notIncludesUnaccentInsensitive: allFilterables(
-    filter: { text: { notIncludesUnaccentInsensitive: "Àss" } }
+    filter: { bpchar4: { notIncludesUnaccentInsensitive: "Àss" } }
   ) {
     ...nodes
   }
   notLikeUnaccentInsensitive: allFilterables(
-    filter: { text: { notLikeUnaccentInsensitive: "%aß%" } }
+    filter: { bpchar4: { notLikeUnaccentInsensitive: "%aß%" } }
   ) {
     ...nodes
   }
   notMatchUnaccentInsensitive: allFilterables(
-    filter: { text: { notMatchUnaccentInsensitive: "^mèläs{2}E$" } }
+    filter: { bpchar4: { notMatchUnaccentInsensitive: "^läs{2}$" } }
   ) {
     ...nodes
   }

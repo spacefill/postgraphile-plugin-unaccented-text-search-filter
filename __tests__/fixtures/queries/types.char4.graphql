@@ -15,17 +15,17 @@ query char4 {
     ...nodes
   }
   notIncludesUnaccentInsensitive: allFilterables(
-    filter: { char4: { notIncludesUnaccentInsensitive: "É" } }
+    filter: { char4: { notIncludesUnaccentInsensitive: "Àss" } }
   ) {
     ...nodes
   }
   notLikeUnaccentInsensitive: allFilterables(
-    filter: { char4: { notLikeUnaccentInsensitive: "%ÊS%" } }
+    filter: { char4: { notLikeUnaccentInsensitive: "%aß%" } }
   ) {
     ...nodes
   }
   notMatchUnaccentInsensitive: allFilterables(
-    filter: { char4: { notMatchUnaccentInsensitive: "^të.{2}$" } }
+    filter: { char4: { notMatchUnaccentInsensitive: "^läs{2}$" } }
   ) {
     ...nodes
   }

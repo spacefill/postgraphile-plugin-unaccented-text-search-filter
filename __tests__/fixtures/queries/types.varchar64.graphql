@@ -5,7 +5,7 @@ query varchar64 {
     ...nodes
   }
   likeUnaccentInsensitive: allFilterables(
-    filter: { varchar64: { likeUnaccentInsensitive: "_ê%" } }
+    filter: { varchar64: { likeUnaccentInsensitive: "_éï%" } }
   ) {
     ...nodes
   }
@@ -15,17 +15,17 @@ query varchar64 {
     ...nodes
   }
   notIncludesUnaccentInsensitive: allFilterables(
-    filter: { varchar64: { notIncludesUnaccentInsensitive: "É" } }
+    filter: { varchar64: { notIncludesUnaccentInsensitive: "Àss" } }
   ) {
     ...nodes
   }
   notLikeUnaccentInsensitive: allFilterables(
-    filter: { varchar64: { notLikeUnaccentInsensitive: "%ÊS%" } }
+    filter: { varchar64: { notLikeUnaccentInsensitive: "%aß%" } }
   ) {
     ...nodes
   }
   notMatchUnaccentInsensitive: allFilterables(
-    filter: { varchar64: { notMatchUnaccentInsensitive: "^të.{2}$" } }
+    filter: { varchar64: { notMatchUnaccentInsensitive: "^mèläs{2}E$" } }
   ) {
     ...nodes
   }
