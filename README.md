@@ -32,16 +32,50 @@ For an extensive set of examples, see [docs/examples.md](https://github.com/grap
 
 ## Development
 
-To establish a test environment, create an empty PostgreSQL database with C
-collation (required for consistent ordering of strings) and set a
-`TEST_DATABASE_URL` environment variable with your database connection string.
+### Requirements
+
+- [`direnv`](https://direnv.net/)
+- [`asdf`](https://github.com/asdf-vm/asdf)
+- [`docker`](https://www.docker.com/)
+
+Then you must initialize dependancies:
 
 ```bash
-createdb graphile_test_c --template template0 --lc-collate C
-export TEST_DATABASE_URL=postgres://localhost:5432/graphile_test_c
-yarn
-yarn test
+$ direnv allow
+$ asdf install
+$ asdf reshim
 ```
 
-You can also use a language specific ICU collation by changing `C` to the
-wanted collation, e.g. `"fr-x-icu"` for French collation.
+### Tests
+
+To establish a test environment, you must create an empty PostgreSQL database with C
+collation (required for consistent ordering of strings):
+
+```bash
+$ docker-compose up -d
+```
+
+Install nodejs dependencies:
+
+```bash
+$ yarn install
+```
+
+Run tests:
+
+```bash
+$ yarn run test
+yarn run v1.22.17
+$ jest -i
+ PASS  __tests__/integration/queries.test.ts
+  ✓ types.char4.graphql (44 ms)
+  ✓ types.text.graphql (22 ms)
+  ✓ types.varchar64.graphql (22 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
+Snapshots:   3 passed, 3 total
+Time:        3.7 s
+Ran all test suites.
+✨  Done in 4.61s.
+```
