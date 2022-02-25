@@ -79,3 +79,20 @@ Time:        3.7 s
 Ran all test suites.
 ✨  Done in 4.61s.
 ```
+
+## Release
+
+Every tag is released with the according version.
+
+### Deploy a new release
+
+Bump version in [`package.json`](./package.json)
+
+Create a PR to release with the bumped version. When your PR is merged on master create and push tag:
+
+```bash
+$ ./scripts/create-and-push-tag.sh
+```
+
+This will automatically create a new local tag and push it. Then the CI will release a new version on npm.
+
