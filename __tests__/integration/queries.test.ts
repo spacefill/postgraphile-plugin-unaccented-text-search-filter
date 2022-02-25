@@ -62,8 +62,6 @@ for (const queryFileName of queryFileNames) {
       path.resolve(queriesDir, queryFileName),
       "utf8"
     );
-    console.log(gqlSchemas)
-    console.log(gqlSchemas?.unaccentedSearchFilter)
     const gqlSchema = gqlSchemas.unaccentedSearchFilter;
     const result = await withPgClient(async (client: pg.PoolClient) =>
       graphql(gqlSchema, query, null, { pgClient: client })
