@@ -1,4 +1,4 @@
-[![Package on npm](https://img.shields.io/npm/v/postgraphile-plugin-unaccented-text-search-filter.svg)](https://www.npmjs.com/package/postgraphile-plugin-unaccented-text-search-filter)
+[![Package on npm](https://img.shields.io/npm/v/@spacefill/postgraphile-plugin-unaccented-text-search-filter.svg)](https://www.npmjs.com/package/@spacefill/postgraphile-plugin-unaccented-text-search-filter)
 
 # postgraphile-plugin-unaccented-text-search-filter
 
